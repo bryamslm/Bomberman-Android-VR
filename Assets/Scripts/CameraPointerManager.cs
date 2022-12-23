@@ -8,6 +8,8 @@ public class CameraPointerManager : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] public GameObject pointer;
     [SerializeField] private float maxDistancePointer = 4.5f;
+    [SerializeField] private GameObject bombButton;
+    [SerializeField] public bool move;
     [Range(0, 1)]
     [SerializeField] private float disPointerObject = 0.95f;
 
@@ -15,6 +17,7 @@ public class CameraPointerManager : MonoBehaviour
 
     private const float _maxDistance = 10;
     private GameObject _gazedAtObject = null;
+    private float timeWait = 0.1f;
 
     private readonly string interactableTag = "Interactable";
     private float scaleSize = 0.025f;
@@ -23,6 +26,8 @@ public class CameraPointerManager : MonoBehaviour
     private void Start()
     {
         GazeManager.Instance.OnGazeSelection += GazeSelection;
+        Debug.Log("Table: " + transform.parent.GetChild(1).transform.position);
+        Debug.Log("Camera: " + transform.position);
     }
 
     private void GazeSelection()
@@ -33,13 +38,18 @@ public class CameraPointerManager : MonoBehaviour
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
+
+
     public void Update()
     {
+
+        //roto el player, se tiene en cuenta que también se rota la camara, para eso el auxRotation
+        bombButton.transform.eulerAngles =new Vector3(0, transform.rotation.eulerAngles.y, bombButton.transform.rotation.z);
+
+
+            
         // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
         // at.
-
-        
-
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
         {

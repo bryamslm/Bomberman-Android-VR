@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8523337797909912028}
   - component: {fileID: 8523337797909912030}
   - component: {fileID: 8523337797909912029}
-  - component: {fileID: 8523337797909912031}
   - component: {fileID: 8523337797909912001}
   - component: {fileID: 8523337797909912000}
   m_Layer: 0
@@ -120,18 +119,6 @@ MonoBehaviour:
   m_TrackingType: 0
   m_UpdateType: 0
   m_UseRelativeTransform: 0
---- !u!114 &8523337797909912031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8523337797909912024}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aebfb4b86b2e54606894da54f755db2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8523337797909912001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointer: {fileID: 7617112925775858803}
   maxDistancePointer: 4.5
+  bombButton: {fileID: 0}
   disPointerObject: 0.95
 --- !u!1 &8523337798129633908
 GameObject:

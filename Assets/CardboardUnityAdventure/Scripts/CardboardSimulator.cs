@@ -29,6 +29,24 @@ public class CardboardSimulator : MonoBehaviour
             cam.transform.eulerAngles = new Vector3(rotationX, rotationY, 0.0f);
         }
 #endif
+
+#if UNITY_ANDROID
+        if (!UseCardboardSimulator)
+            return;
+        if (Input.touchCount == 1)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved)
+            {
+                float mouseX = touch.deltaPosition.x * horizontalSpeed;
+                float mouseY = touch.deltaPosition.y * verticalSpeed;
+                rotationY += mouseX/3;
+                rotationX -= mouseY/3;
+                rotationX = Mathf.Clamp(rotationX, -45, 45);
+                cam.transform.eulerAngles = new Vector3(rotationX, rotationY, 0.0f);
+            }
+        }
+#endif
     }
 
 }

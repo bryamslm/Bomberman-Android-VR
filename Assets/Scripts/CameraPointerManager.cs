@@ -7,7 +7,7 @@ public class CameraPointerManager : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public GameObject pointer;
-    [SerializeField] private float maxDistancePointer = 4.5f;
+    [SerializeField] private float maxDistancePointer;
     [SerializeField] private GameObject bombButton;
     [SerializeField] public bool move;
     [Range(0, 1)]
@@ -51,7 +51,9 @@ public class CameraPointerManager : MonoBehaviour
         // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
         // at.
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
+        //draw ray
+        Debug.DrawRay(transform.position, transform.forward * maxDistancePointer, Color.red);
+        if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistancePointer))
         {
             // GameObject detected in front of the camera.
             if (_gazedAtObject != hit.transform.gameObject)

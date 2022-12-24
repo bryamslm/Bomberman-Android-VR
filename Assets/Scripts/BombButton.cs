@@ -10,16 +10,13 @@ public class BombButton : MonoBehaviour
     [SerializeField] private float bombTime  = 4f;
     [SerializeField] private AudioSource pipBomb;
     [SerializeField] private GameObject explosion;
-    private Vector3 scaleBombSpace = new Vector3(0.270398527f,0.270398229f,0.270398319f);
-    private Vector3 scaleLabyrind = new Vector3(0.150398527f,0.150398229f,0.150398319f);
-    //Vector3(0.0939470902,0.375787586,0.0939470306)
-    //Vector3(0.270398527,0.270398229,0.270398319)
-    // Start is called before the first frame update
-
+    private Vector3 rotation;
+   
     void Awake()
     {
         bomb.SetActive(false);
         explosion.SetActive(false);
+        rotation = bomb.transform.eulerAngles;
     }
 
     // Update is called once per frame
@@ -27,10 +24,11 @@ public class BombButton : MonoBehaviour
     public void OnPointerClick()
     {
         explosion.SetActive(false);
-        //set labyrind as parent
-        bomb.transform.SetParent(labyrind.transform);
+        
+        //set bomb withuot parent
+        bomb.transform.SetParent(null);
         //set the scale
-        bomb.transform.localScale = scaleLabyrind;
+        //bomb.transform.localScale = scaleLabyrind;
         bomb.SetActive(true);
         //call the coroutine
         StartCoroutine(Wait());
@@ -60,9 +58,10 @@ public class BombButton : MonoBehaviour
         //set containerButtons as parent
         bomb.transform.SetParent(containerButtons.transform);
         //set the scale
-        bomb.transform.localScale = scaleBombSpace;
-        //set the position of the bomb
+        
         bomb.transform.position = transform.position;
+        //set the rotation
+        bomb.transform.eulerAngles = rotation;
         //set active false
         bomb.SetActive(false);
         

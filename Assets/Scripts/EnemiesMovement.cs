@@ -86,11 +86,11 @@ public class EnemiesMovement : MonoBehaviour
             {
                 rotation = 0;
             }
-            while (transform.rotation.eulerAngles.y < (rotation - 1) || transform.rotation.eulerAngles.y > (rotation + 1))
+            while (transform.rotation.eulerAngles.y < (rotation - 3) || transform.rotation.eulerAngles.y > (rotation + 3))
             {
                 //Vector3(0,0,0)
                 float auxRotation = transform.rotation.eulerAngles.y;
-                auxRotation += 2;
+                auxRotation += 3;
                 transform.transform.eulerAngles = new Vector3(0, auxRotation, 0);
                 yield return null;
             }
@@ -108,11 +108,11 @@ public class EnemiesMovement : MonoBehaviour
             {
                 rotation = 270;
             }
-            while (transform.rotation.eulerAngles.y < (rotation - 1) || transform.rotation.eulerAngles.y > (rotation + 1))
+            while (transform.rotation.eulerAngles.y < (rotation - 3) || transform.rotation.eulerAngles.y > (rotation + 3))
             {
                 //Vector3(0,0,0)
                 float auxRotation = transform.rotation.eulerAngles.y;
-                auxRotation -= 2;
+                auxRotation -= 3;
                 transform.transform.eulerAngles = new Vector3(0, auxRotation, 0);
                 yield return null;
             }

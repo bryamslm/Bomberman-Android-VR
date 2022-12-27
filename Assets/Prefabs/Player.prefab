@@ -167,6 +167,7 @@ MonoBehaviour:
   pointer: {fileID: 7617112925775858803}
   maxDistancePointer: 4.5
   bombButton: {fileID: 0}
+  move: 0
   disPointerObject: 0.95
 --- !u!1 &8523337798129633908
 GameObject:

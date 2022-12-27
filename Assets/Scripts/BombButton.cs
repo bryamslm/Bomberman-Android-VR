@@ -23,7 +23,6 @@ public class BombButton : MonoBehaviour
    
     public void OnPointerClick()
     {
-        explosion.SetActive(false);
         
         //set bomb withuot parent
         bomb.transform.SetParent(null);
@@ -43,7 +42,7 @@ public class BombButton : MonoBehaviour
         pipBomb.Stop();
 
         //set explosion position
-        explosion.transform.position = bomb.transform.position;
+        explosion.transform.position =new Vector3(bomb.transform.position.x, 0.5f, bomb.transform.position.z);
         //set active true
         explosion.SetActive(true);
 
@@ -54,16 +53,23 @@ public class BombButton : MonoBehaviour
 
         //get audio from explosion
         explosion.GetComponent<AudioSource>().Play();
-
         //set containerButtons as parent
         bomb.transform.SetParent(containerButtons.transform);
         //set the scale
         
         bomb.transform.position = transform.position;
+
+        //set y position
+        bomb.transform.position = new Vector3(bomb.transform.position.x, -0.034f, bomb.transform.position.z);
         //set the rotation
         bomb.transform.eulerAngles = rotation;
         //set active false
         bomb.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        explosion.SetActive(false);
+
+        
+        
         
     }
 }

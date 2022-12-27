@@ -12,6 +12,7 @@ public class CameraPointerManager : MonoBehaviour
     [SerializeField] public bool move;
     [Range(0, 1)]
     [SerializeField] private float disPointerObject = 0.95f;
+    GameObject userPostal;
 
 
 
@@ -26,8 +27,13 @@ public class CameraPointerManager : MonoBehaviour
     private void Start()
     {
         GazeManager.Instance.OnGazeSelection += GazeSelection;
-        Debug.Log("Table: " + transform.parent.GetChild(1).transform.position);
-        Debug.Log("Camera: " + transform.position);
+        //find by tag
+        try{
+            userPostal = GameObject.FindGameObjectWithTag("userPostal");
+        }
+        catch
+        {
+        }
     }
 
     private void GazeSelection()
@@ -45,6 +51,16 @@ public class CameraPointerManager : MonoBehaviour
 
         //roto el player, se tiene en cuenta que también se rota la camara, para eso el auxRotation
         bombButton.transform.eulerAngles =new Vector3(0, transform.rotation.eulerAngles.y, bombButton.transform.rotation.z);
+        
+        //modufy y rotation of userPostal
+       try{
+            userPostal.transform.eulerAngles = new Vector3(0f, transform.rotation.eulerAngles.y, 0f);
+       
+        }
+        catch
+        {
+        
+        }
 
 
             
@@ -59,7 +75,8 @@ public class CameraPointerManager : MonoBehaviour
             if (_gazedAtObject != hit.transform.gameObject)
             {
                 // New GameObject.
-                _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
+               try{
+                 _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
                 _gazedAtObject = hit.transform.gameObject;
                 // try{
                 //     //get sound from object
@@ -74,6 +91,10 @@ public class CameraPointerManager : MonoBehaviour
                 
                 _gazedAtObject.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
                 GazeManager.Instance.StartGazeSelection();
+               }
+                catch
+                {
+                }
             }
             if (hit.transform.CompareTag(interactableTag))
             {

@@ -39,10 +39,15 @@ public class GazeManager : MonoBehaviour
 
     public void Update()
     {
-        if (runTimer)
+        try{
+            if (runTimer)
+            {
+                timeProggres += Time.deltaTime;
+                AddValue(timeProggres);
+            }
+        }
+        catch
         {
-            timeProggres += Time.deltaTime;
-            AddValue(timeProggres);
         }
     }
     public void SetUpGaze(float timeForSelection) 
@@ -66,15 +71,23 @@ public class GazeManager : MonoBehaviour
 
     private void AddValue(float val) 
     {
-        timeCounter = val;
-        if (timeCounter >= timeForSelection)
+        try
         {
-            timeCounter = 0;
-            runTimer = false;
-            OnGazeSelection?.Invoke();
-        }
+            timeCounter = val;
+            if (timeCounter >= timeForSelection)
+            {
+                
+                timeCounter = 0;
+                runTimer = false;
+                
+                OnGazeSelection?.Invoke();
+            }
 
-        fillIndicator.fillAmount = Normalise();
+            fillIndicator.fillAmount = Normalise();
+        }
+        catch
+        {
+        }
     }
     private float Normalise() 
     {

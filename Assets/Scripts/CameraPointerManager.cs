@@ -110,14 +110,26 @@ public class CameraPointerManager : MonoBehaviour
         {
             // No GameObject detected in front of the camera.
             
-            _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
-            _gazedAtObject = null;
+            try{
+                _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
+                _gazedAtObject = null;
+            }
+            catch
+            {
+
+            }
         }
 
         // Checks for screen touches.
         if (Google.XR.Cardboard.Api.IsTriggerPressed)
         {
-            _gazedAtObject?.SendMessage("OnPointerClick", null, SendMessageOptions.DontRequireReceiver);
+            try{
+                _gazedAtObject?.SendMessage("OnPointerClick", null, SendMessageOptions.DontRequireReceiver);
+            }
+            catch
+            {
+                
+            }
         }
     }
 

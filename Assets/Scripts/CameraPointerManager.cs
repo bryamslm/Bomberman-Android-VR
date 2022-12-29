@@ -12,7 +12,7 @@ public class CameraPointerManager : MonoBehaviour
     [SerializeField] public bool move;
     [Range(0, 1)]
     [SerializeField] private float disPointerObject = 0.95f;
-    GameObject userPostal;
+
 
 
 
@@ -28,12 +28,7 @@ public class CameraPointerManager : MonoBehaviour
     {
         GazeManager.Instance.OnGazeSelection += GazeSelection;
         //find by tag
-        try{
-            userPostal = GameObject.FindGameObjectWithTag("userPostal");
-        }
-        catch
-        {
-        }
+   
     }
 
     private void GazeSelection()
@@ -49,87 +44,86 @@ public class CameraPointerManager : MonoBehaviour
     public void Update()
     {
 
-        //roto el player, se tiene en cuenta que también se rota la camara, para eso el auxRotation
-        bombButton.transform.eulerAngles =new Vector3(0, transform.rotation.eulerAngles.y, bombButton.transform.rotation.z);
-        
-        //modufy y rotation of userPostal
-       try{
-            userPostal.transform.eulerAngles = new Vector3(0f, transform.rotation.eulerAngles.y, 0f);
-       
-        }
-        catch
+        try
         {
-        
-        }
-
-
+            //roto el player, se tiene en cuenta que también se rota la camara, para eso el auxRotation
+            bombButton.transform.eulerAngles =new Vector3(0, transform.rotation.eulerAngles.y, bombButton.transform.rotation.z);
             
-        // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
-        // at.
-        RaycastHit hit;
-        //draw ray
-        Debug.DrawRay(transform.position, transform.forward * maxDistancePointer, Color.red);
-        if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistancePointer))
-        {
-            // GameObject detected in front of the camera.
-            if (_gazedAtObject != hit.transform.gameObject)
-            {
-                // New GameObject.
-               try{
-                 _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
-                _gazedAtObject = hit.transform.gameObject;
-                // try{
-                //     //get sound from object
-                //     AudioSource audio = _gazedAtObject.GetComponent<AudioSource>();
-                //     //play sound
-                //     audio.Play();
-                    
+        
 
-                // }catch{
-                //     Debug.Log("No sound");
-                // }
+
                 
-                _gazedAtObject.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
-                GazeManager.Instance.StartGazeSelection();
-               }
-                catch
-                {
-                }
-            }
-            if (hit.transform.CompareTag(interactableTag))
+            // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
+            // at.
+            RaycastHit hit;
+            //draw ray
+            Debug.DrawRay(transform.position, transform.forward * maxDistancePointer, Color.red);
+            if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistancePointer))
             {
-                PointerOnGaze(hit.point);
+                // GameObject detected in front of the camera.
+                if (_gazedAtObject != hit.transform.gameObject)
+                {
+                    // New GameObject.
+                try{
+                    _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
+                    _gazedAtObject = hit.transform.gameObject;
+                    // try{
+                    //     //get sound from object
+                    //     AudioSource audio = _gazedAtObject.GetComponent<AudioSource>();
+                    //     //play sound
+                    //     audio.Play();
+                        
+
+                    // }catch{
+                    //     Debug.Log("No sound");
+                    // }
+                    
+                    _gazedAtObject.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
+                    GazeManager.Instance.StartGazeSelection();
+                }
+                    catch
+                    {
+                    }
+                }
+                if (hit.transform.CompareTag(interactableTag))
+                {
+                    PointerOnGaze(hit.point);
+                }
+                else
+                {
+                    PointerOutGaze();
+                }
+
             }
             else
             {
-                PointerOutGaze();
-            }
-
-        }
-        else
-        {
-            // No GameObject detected in front of the camera.
-            
-            try{
-                _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
-                _gazedAtObject = null;
-            }
-            catch
-            {
-
-            }
-        }
-
-        // Checks for screen touches.
-        if (Google.XR.Cardboard.Api.IsTriggerPressed)
-        {
-            try{
-                _gazedAtObject?.SendMessage("OnPointerClick", null, SendMessageOptions.DontRequireReceiver);
-            }
-            catch
-            {
+                // No GameObject detected in front of the camera.
                 
+                try{
+                    _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
+                    _gazedAtObject = null;
+                }
+                catch
+                {
+
+                }
             }
+
+            // Checks for screen touches.
+            if (Google.XR.Cardboard.Api.IsTriggerPressed)
+            {
+                try{
+                    _gazedAtObject?.SendMessage("OnPointerClick", null, SendMessageOptions.DontRequireReceiver);
+                }
+                catch
+                {
+                    
+                }
+            }
+        }
+        catch
+        {
+            
         }
     }
 

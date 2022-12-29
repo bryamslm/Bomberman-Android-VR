@@ -15,7 +15,7 @@ public class BombExplosion : MonoBehaviour
             //destroy player
             Destroy(other.gameObject);
         }
-        if (other.gameObject.CompareTag("MainCamera"))
+        if (other.gameObject.CompareTag("userPostal"))
         {
             Debug.Log("You Lose");
             //destroy player
@@ -28,15 +28,4 @@ public class BombExplosion : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
-    //on trugger stay
-    // void OnTriggerStay(Collider other)
-    // {
-    //     if (other.gameObject.CompareTag("pared"))
-    //     {
-    //         Debug.Log("pared Destroyed");
-    //         //destroy player
-    //         Destroy(other.gameObject);
-    //     }
-    // }
 }

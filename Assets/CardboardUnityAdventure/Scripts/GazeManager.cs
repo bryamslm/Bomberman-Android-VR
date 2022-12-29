@@ -48,6 +48,7 @@ public class GazeManager : MonoBehaviour
         }
         catch
         {
+            CancelGazeSelection();
         }
     }
     public void SetUpGaze(float timeForSelection) 
@@ -56,17 +57,32 @@ public class GazeManager : MonoBehaviour
     }
     public void StartGazeSelection()
     {
-        gazeBarCanvas.SetActive(true);
-        runTimer = true;
-        timeProggres = 0;
+        try
+        {
+            gazeBarCanvas.SetActive(true);
+            runTimer = true;
+            timeProggres = 0;
+        }
+        catch
+        {
+            CancelGazeSelection();
+        }
+        
     }
 
     public void CancelGazeSelection()
     {
-        gazeBarCanvas.SetActive(false);
-        runTimer = false;
-        timeProggres = 0;
-        timeCounter = 0;
+        try
+        {
+            gazeBarCanvas.SetActive(false);
+            runTimer = false;
+            timeProggres = 0;
+            timeCounter = 0;
+        }
+        catch
+        {
+
+        }
     }
 
     private void AddValue(float val) 
@@ -87,6 +103,7 @@ public class GazeManager : MonoBehaviour
         }
         catch
         {
+            CancelGazeSelection();
         }
     }
     private float Normalise() 

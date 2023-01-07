@@ -1114,6 +1114,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1168456738}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &1087984030 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8523337797909912003, guid: 3a386769946dd20458ea1da839790f29,
+    type: 3}
+  m_PrefabInstance: {fileID: 1168456738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1112828393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1703,7 +1709,7 @@ GameObject:
   - component: {fileID: 1908410107}
   - component: {fileID: 1908410106}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1718,7 +1724,7 @@ RectTransform:
   m_GameObject: {fileID: 1908410101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.30359998}
-  m_LocalScale: {x: 0.0046758205, y: 0.0025861901, z: 0.002371346}
+  m_LocalScale: {x: 0.0049652536, y: 0.0027462754, z: 0.0025181326}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1941423620}
@@ -1730,7 +1736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.03, y: 0.03}
+  m_AnchoredPosition: {x: 0, y: 0.0475}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1908410103
@@ -1783,7 +1789,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1087984030}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

@@ -272,7 +272,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 46.14, y: 10.52, z: 1}
+  m_Size: {x: 46.14, y: 10.52, z: 7.41}
   m_Center: {x: 1.35, y: 44.77, z: 0}
 --- !u!114 &25969459
 MonoBehaviour:
@@ -1854,8 +1854,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1785868617}
-  - component: {fileID: 1785868618}
   - component: {fileID: 1785868619}
+  - component: {fileID: 1785868620}
   m_Layer: 0
   m_Name: AboutUs
   m_TagString: Interactable
@@ -1879,19 +1879,6 @@ Transform:
   m_Father: {fileID: 2132771829}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1785868618
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785868616}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.88, y: 0.26, z: 1}
-  m_Center: {x: 0.12, y: -1.45, z: 0}
 --- !u!114 &1785868619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1904,6 +1891,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc22ebf1ca72514b8bbb950dc1196ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1785868620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785868616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.72, y: -0.26, z: 1.54}
+  m_Center: {x: 0.02, y: -1.35, z: 0}
 --- !u!1 &1908410101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,9 +1918,10 @@ GameObject:
   - component: {fileID: 1908410103}
   - component: {fileID: 1908410107}
   - component: {fileID: 1908410106}
+  - component: {fileID: 1908410108}
   m_Layer: 5
   m_Name: MainMenu
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2048,6 +2049,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908410101}
   m_CullTransparentMesh: 1
+--- !u!65 &1908410108
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908410101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100.38, y: 99.5, z: 1.73}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1941423619
 GameObject:
   m_ObjectHideFlags: 0

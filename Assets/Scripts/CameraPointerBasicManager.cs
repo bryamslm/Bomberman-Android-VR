@@ -32,6 +32,10 @@ public class CameraPointerBasicManager : MonoBehaviour
         {
             _gazedAtObject?.SendMessage("loadAbout", null, SendMessageOptions.DontRequireReceiver);
         }
+        if (_gazedAtObject.name == "Return")
+        {
+            _gazedAtObject?.SendMessage("loadMenu", null, SendMessageOptions.DontRequireReceiver);
+        }
 
 
             

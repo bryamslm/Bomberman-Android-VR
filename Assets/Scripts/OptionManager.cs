@@ -11,11 +11,15 @@ public class OptionManager : MonoBehaviour
         _startingPosition = transform.parent.localPosition;
         _myRenderer = GetComponent<Renderer>();
     }
+    public void loadMenu(){
+        SceneManager.LoadScene(0);
+    }
     // Update is called once per frame
     public void loadGame(){
         SceneManager.LoadScene(1);
     }
-        public void loadAbout(){
+    public void loadAbout(){
         SceneManager.LoadScene(2);
     }
+
 }

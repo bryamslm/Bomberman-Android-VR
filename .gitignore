@@ -61,3 +61,18 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+*.meta
+*.dll
+*.bytes
+Assets/itseez3d/DOCUMENTATION.txt
+Assets/itseez3d/avatar_maker/resources/AvatarUnlitHairShader.shader
+Assets/itseez3d/avatar_maker/resources/AvatarUnlitShader.shader
+Assets/itseez3d/avatar_maker/scripts/AvatarInfo.cs
+Assets/itseez3d/avatar_maker/scripts/AvatarMakerInitializer.cs
+Assets/itseez3d/avatar_maker/scripts/editor/AnimationClipModifier.cs
+Assets/itseez3d/avatar_maker/scripts/editor/AvatarMakerEditor.cs
+Assets/itseez3d/avatar_maker/scripts/editor/AvatarMakerWindow.cs
+Assets/itseez3d/avatar_maker/scripts/editor/BaseWindow.cs
+Assets/itseez3d/avatar_maker/scripts/editor/Export.cs
+Assets/itseez3d/avatar_maker/scripts/editor/MotionCaptureWindow.cs
+Assets/itseez3d/third_party_notices.txt

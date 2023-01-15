@@ -36,7 +36,10 @@ public class CameraPointerBasicManager : MonoBehaviour
         {
             _gazedAtObject?.SendMessage("loadMenu", null, SendMessageOptions.DontRequireReceiver);
         }
-
+        if(_gazedAtObject.CompareTag(interactableTag))
+        {
+            _gazedAtObject?.SendMessage("OnPointerClick", null, SendMessageOptions.DontRequireReceiver);
+        }
 
             
     }

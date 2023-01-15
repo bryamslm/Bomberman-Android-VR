@@ -9,6 +9,7 @@ public class TimeController : MonoBehaviour
     public float  mins;
     public float  secs;
     private bool printTime = true;
+    public bool timeWait = false;
     [SerializeField] public GameObject inGameButtons;
     [SerializeField] public GameObject gameOverButtons;
     [SerializeField] public Movement movementScript;
@@ -29,41 +30,42 @@ public class TimeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //resta a secs el tiempo que pasa
-        secs -= Time.deltaTime;
+       if(!timeWait){
+            //resta a secs el tiempo que pasa
+            secs -= Time.deltaTime;
 
-        int secsInt = (int)secs;
-        
-        if (secs <= 0)
-        {
-            mins -= 1;
-            if(mins != 0)
-                secs = 60;
-        }
-
-        if(printTime)
-        {
-            if(secsInt >9)
-                textMesh.text = "Time: " + mins + ":" + secsInt;
-            else
-                textMesh.text = "Time: " + mins + ":0" + secsInt;
-        }
+            int secsInt = (int)secs;
             
+            if (secs <= 0)
+            {
+                mins -= 1;
+                if(mins != 0)
+                    secs = 60;
+            }
 
-        if (mins <= 0f && secsInt <= 0)
-        {
-            //game over
-            Debug.Log("game over");
-            gameOverAudio.Play();
-            gameAudio.Stop();
-            
-            printTime = false;
-            inGameButtons.SetActive(false);
-            gameOverButtons.SetActive(true);
-            movementScript.enabled = false;
-        }
+            if(printTime)
+            {
+                if(secsInt >9)
+                    textMesh.text = "Time: " + mins + ":" + secsInt;
+                else
+                    textMesh.text = "Time: " + mins + ":0" + secsInt;
+            }
+                
 
-        
+            if (mins <= 0f && secsInt <= 0)
+            {
+                //game over
+                Debug.Log("game over");
+                gameOverAudio.Play();
+                gameAudio.Stop();
+                
+                printTime = false;
+                inGameButtons.SetActive(false);
+                gameOverButtons.SetActive(true);
+                movementScript.enabled = false;
+            }
+       }
+
         
     }
 

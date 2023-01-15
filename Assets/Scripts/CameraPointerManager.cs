@@ -78,7 +78,7 @@ public class CameraPointerManager : MonoBehaviour
                     //     Debug.Log("No sound");
                     // }
                     
-                    _gazedAtObject.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
+                    _gazedAtObject?.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
                     GazeManager.Instance.StartGazeSelection();
                 }
                     catch

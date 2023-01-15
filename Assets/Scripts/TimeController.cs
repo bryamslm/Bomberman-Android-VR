@@ -6,9 +6,15 @@ using TMPro;
 public class TimeController : MonoBehaviour
 {
     //time 3:00
-    public float  mins = 3;
-    public float  secs = 60f;
+    public float  mins;
+    public float  secs;
+    private bool printTime = true;
+    [SerializeField] public GameObject inGameButtons;
+    [SerializeField] public GameObject gameOverButtons;
+    [SerializeField] public Movement movementScript;
     [SerializeField] public TextMeshProUGUI textMesh;
+    [SerializeField] public AudioSource gameAudio;
+    [SerializeField] public AudioSource gameOverAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,15 +37,33 @@ public class TimeController : MonoBehaviour
         if (secs <= 0)
         {
             mins -= 1;
-            secs = 60;
+            if(mins != 0)
+                secs = 60;
         }
-        if (mins <= 0)
+
+        if(printTime)
+        {
+            if(secsInt >9)
+                textMesh.text = "Time: " + mins + ":" + secsInt;
+            else
+                textMesh.text = "Time: " + mins + ":0" + secsInt;
+        }
+            
+
+        if (mins <= 0f && secsInt <= 0)
         {
             //game over
             Debug.Log("game over");
+            gameOverAudio.Play();
+            gameAudio.Stop();
+            
+            printTime = false;
+            inGameButtons.SetActive(false);
+            gameOverButtons.SetActive(true);
+            movementScript.enabled = false;
         }
+
         
-        textMesh.text = "Time: " + mins + ":" + secsInt;
         
     }
 

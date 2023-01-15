@@ -23,17 +23,19 @@ public class BombButton : MonoBehaviour
    
     public void OnPointerClick()
     {
+        //duplicate bomb
+        GameObject bomb_aux = Instantiate(bomb, bomb.transform.position, Quaternion.identity);
         
         //set bomb withuot parent
-        bomb.transform.SetParent(null);
+        bomb_aux.transform.SetParent(null);
         //set the scale
         //bomb.transform.localScale = scaleLabyrind;
-        bomb.SetActive(true);
+        bomb_aux.SetActive(true);
         //call the coroutine
-        StartCoroutine(Wait());
+        StartCoroutine(Wait(bomb_aux));
     }
 
-    IEnumerator Wait()
+    IEnumerator Wait(GameObject bomb_aux)
     {
         //play the sound
         pipBomb.Play(); 
@@ -42,7 +44,7 @@ public class BombButton : MonoBehaviour
         pipBomb.Stop();
 
         //set explosion position
-        explosion.transform.position =new Vector3(bomb.transform.position.x, 0.5f, bomb.transform.position.z);
+        explosion.transform.position =new Vector3(bomb_aux.transform.position.x, 0.5f, bomb_aux.transform.position.z);
         //set active true
         explosion.SetActive(true);
 
@@ -54,17 +56,7 @@ public class BombButton : MonoBehaviour
         //get audio from explosion
         explosion.GetComponent<AudioSource>().Play();
         //set containerButtons as parent
-        bomb.transform.SetParent(containerButtons.transform);
-        //set the scale
-        
-        bomb.transform.position = transform.position;
-
-        //set y position
-        bomb.transform.position = new Vector3(bomb.transform.position.x, -0.034f, bomb.transform.position.z);
-        //set the rotation
-        bomb.transform.eulerAngles = rotation;
-        //set active false
-        bomb.SetActive(false);
+        Destroy(bomb_aux);
         yield return new WaitForSeconds(1f);
         explosion.SetActive(false);
 

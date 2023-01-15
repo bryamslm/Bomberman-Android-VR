@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing.Text;
+//using System.Drawing.Text;
 using UnityEngine;
 
 public class CameraPointerManager : MonoBehaviour

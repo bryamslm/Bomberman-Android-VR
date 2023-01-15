@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43961924, g: 0.4880104, b: 0.5682377, a: 1}
+  m_IndirectSpecularColor: {r: 0.17500639, g: 0.21893348, b: 0.3012261, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4293459778
+  m_fontColor: {r: 0.2584905, g: 1, b: 0.90855235, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -527,6 +527,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 462412117}
     m_Modifications:
+    - target: {fileID: 2305158325935576362, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158325935576362, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158325935576362, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158325935576362, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158326051495791, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158326051495791, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158326051495791, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158326051495791, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2305158326965435992, guid: 2f0432d3a9594db438d41ca88128c4a1,
         type: 3}
       propertyPath: m_Name
@@ -545,17 +585,17 @@ PrefabInstance:
     - target: {fileID: 2305158326965436007, guid: 2f0432d3a9594db438d41ca88128c4a1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3712216
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2305158326965436007, guid: 2f0432d3a9594db438d41ca88128c4a1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3712216
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2305158326965436007, guid: 2f0432d3a9594db438d41ca88128c4a1,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3712216
+      value: 1.1395286
       objectReference: {fileID: 0}
     - target: {fileID: 2305158326965436007, guid: 2f0432d3a9594db438d41ca88128c4a1,
         type: 3}
@@ -606,6 +646,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158326965436007, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158326994927420, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158326994927420, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158326994927420, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305158326994927420, guid: 2f0432d3a9594db438d41ca88128c4a1,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0432d3a9594db438d41ca88128c4a1, type: 3}
@@ -770,7 +835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462412115}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.74, y: 12.07, z: 3.3}
+  m_LocalPosition: {x: -11.74, y: 11.61, z: 4.76}
   m_LocalScale: {x: 0.86742, y: 0.86742, z: 0.86742}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -992,7 +1057,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Creted by
 
-    Bryam Lopez
+    Bryam Lopez,
+
+    Reyner Vargas
 
     and
 

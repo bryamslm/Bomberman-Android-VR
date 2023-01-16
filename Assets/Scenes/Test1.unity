@@ -3838,12 +3838,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: -0.41, z: 0}
---- !u!95 &1545731376 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8140549531142371750, guid: db3403193cfd52a439b2c807061b4c07,
-    type: 3}
-  m_PrefabInstance: {fileID: 8140549531279823143}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1577062959
 GameObject:
   m_ObjectHideFlags: 0
@@ -5052,21 +5046,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3597811126055855888, guid: db3403193cfd52a439b2c807061b4c07,
+    - target: {fileID: 1816617592870864537, guid: db3403193cfd52a439b2c807061b4c07,
         type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1532299145}
-    - target: {fileID: 3597811126055855888, guid: db3403193cfd52a439b2c807061b4c07,
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157318704896901598, guid: db3403193cfd52a439b2c807061b4c07,
         type: 3}
-      propertyPath: nextLevel
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819560305485922913, guid: db3403193cfd52a439b2c807061b4c07,
+        type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3597811126055855888, guid: db3403193cfd52a439b2c807061b4c07,
-        type: 3}
-      propertyPath: loadingScreenAnim
-      value: 
-      objectReference: {fileID: 1545731376}
     - target: {fileID: 8140549533034315501, guid: db3403193cfd52a439b2c807061b4c07,
         type: 3}
       propertyPath: m_RootOrder

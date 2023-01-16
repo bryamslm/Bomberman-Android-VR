@@ -278,6 +278,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3597811126055855888, guid: db3403193cfd52a439b2c807061b4c07,
         type: 3}
+      propertyPath: loadingTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597811126055855888, guid: db3403193cfd52a439b2c807061b4c07,
+        type: 3}
       propertyPath: loadingScreenAnim
       value: 
       objectReference: {fileID: 157669144}
@@ -345,7 +350,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: db3403193cfd52a439b2c807061b4c07, type: 3}
 --- !u!95 &157669144 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 8140549531142371750, guid: db3403193cfd52a439b2c807061b4c07,
+  m_CorrespondingSourceObject: {fileID: 6995625299811071724, guid: db3403193cfd52a439b2c807061b4c07,
     type: 3}
   m_PrefabInstance: {fileID: 157669143}
   m_PrefabAsset: {fileID: 0}

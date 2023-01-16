@@ -5,30 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class LoadingScript : MonoBehaviour
 {
-    public int nextLevel;
-    public Animator loadingScreenAnim;
-    public float loadingTime = 1f;
-    public GameObject minimap;
+    public int nextLevel = 3;
 
     // Update is called once per frame
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Portal"))
-        {
-            minimap.SetActive(false);
-            LoadNextLevel(nextLevel);
-        }
+
+    void Start(){
+        StartCoroutine(LoadLevel());
     }
 
-    public void LoadNextLevel(int nextLevel){
-        StartCoroutine(LoadLevel(nextLevel));
-    }
-
-    IEnumerator LoadLevel(int nextLevelIndex){
-        loadingScreenAnim.SetTrigger("Start");
-
-        yield return new WaitForSeconds(loadingTime);
+    IEnumerator LoadLevel(){
+        yield return new WaitForSeconds(6f);
         
-        SceneManager.LoadScene(nextLevelIndex);
+        SceneManager.LoadScene(nextLevel);
     }
 }

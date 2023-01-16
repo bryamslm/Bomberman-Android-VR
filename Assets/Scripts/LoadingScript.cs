@@ -8,11 +8,16 @@ public class LoadingScript : MonoBehaviour
     public int nextLevel;
     public Animator loadingScreenAnim;
     public float loadingTime = 1f;
+    public GameObject minimap;
 
     // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(Wait());
+        if (other.gameObject.CompareTag("Portal"))
+        {
+            minimap.SetActive(false);
+            LoadNextLevel(nextLevel);
+        }
     }
 
     public void LoadNextLevel(int nextLevel){
@@ -25,10 +30,5 @@ public class LoadingScript : MonoBehaviour
         yield return new WaitForSeconds(loadingTime);
         
         SceneManager.LoadScene(nextLevelIndex);
-    }
-
-    IEnumerator Wait(){
-        yield return new WaitForSeconds(6);
-        LoadNextLevel(nextLevel);
     }
 }

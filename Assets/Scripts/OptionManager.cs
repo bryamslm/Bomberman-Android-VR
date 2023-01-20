@@ -16,10 +16,10 @@ public class OptionManager : MonoBehaviour
     }
     // Update is called once per frame
     public void loadGame(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     public void loadAbout(){
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
 }

@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class ChargeCurrentLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int currentLevel = 1;
+    private string currentLevelName = "CurrentLevel";
+
+    private void Awake()
     {
-        
+        LoadData();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void onDestroy()
     {
-        
+        SaveData();
+    }
+
+    private void SaveData()
+    {
+        PlayerPrefs.SetInt(currentLevelName, currentLevel);
+    }
+
+    private void LoadData()
+    {
+        PlayerPrefs.GetInt(currentLevelName, 1);
     }
 }

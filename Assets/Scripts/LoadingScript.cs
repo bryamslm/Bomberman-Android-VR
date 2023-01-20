@@ -7,29 +7,20 @@ using TMPro;
 
 public class LoadingScript : MonoBehaviour
 {
-    private int currentLevel;
+    public int currentLevel;
     private string currentLevelName = "CurrentLevel";
     public TextMeshProUGUI levelText;
 
     // Update is called once per frame
 
     void Start(){
+        currentLevel = PlayerPrefs.GetInt(currentLevelName, 1);
         levelText.text = "Level " + currentLevel;
         StartCoroutine(LoadLevel());
     }
 
-    private void Awake()
-    {
-        LoadData();
-    }
-
-    private void LoadData()
-    {
-        currentLevel = PlayerPrefs.GetInt(currentLevelName, 1) + 2;
-    }
-
     IEnumerator LoadLevel(){
         yield return new WaitForSeconds(6f);
-        SceneManager.LoadScene(currentLevel);
+        SceneManager.LoadScene(currentLevel+2);
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17500639, g: 0.21893348, b: 0.3012261, a: 1}
+  m_IndirectSpecularColor: {r: 0.17500687, g: 0.2189342, b: 0.3012271, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1059,7 +1059,7 @@ MonoBehaviour:
 
     Bryam Lopez,
 
-    Reyner Vargas
+    Reyner Arias
 
     and
 

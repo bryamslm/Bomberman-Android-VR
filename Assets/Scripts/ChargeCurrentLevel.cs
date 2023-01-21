@@ -5,12 +5,23 @@ using UnityEngine.UI;
 
 public class ChargeCurrentLevel : MonoBehaviour
 {
-    private int currentLevel = 1;
+    private int currentLevel;
     private string currentLevelName = "CurrentLevel";
 
-    private void onDestroy()
+    void Start()
+    {
+        LoadData();
+    }
+
+    private void OnDestroy()
     {
         SaveData();
+    }
+
+    private void LoadData()
+    {
+
+        
     }
 
     private void SaveData()

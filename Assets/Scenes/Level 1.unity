@@ -342,7 +342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &21777264
 Transform:
   m_ObjectHideFlags: 0
@@ -13373,6 +13373,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Portal2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752393337276338875, guid: ef88c30d57714194db435d1025ee45bf,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752393337276338875, guid: ef88c30d57714194db435d1025ee45bf,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752393337276338875, guid: ef88c30d57714194db435d1025ee45bf,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef88c30d57714194db435d1025ee45bf, type: 3}

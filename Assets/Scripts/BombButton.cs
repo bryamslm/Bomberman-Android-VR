@@ -5,10 +5,11 @@ using UnityEngine;
 public class BombButton : MonoBehaviour
 {
     [SerializeField] private GameObject bomb;
+    [SerializeField] private GameObject labyrind;
+    [SerializeField] private GameObject containerButtons;
     [SerializeField] private float bombTime  = 4f;
     [SerializeField] private AudioSource pipBomb;
     [SerializeField] private GameObject explosion;
-    [SerializeField] private GameObject gazePosition;
     private Vector3 rotation;
    
     void Awake()
@@ -20,7 +21,7 @@ public class BombButton : MonoBehaviour
 
     // Update is called once per frame
    
-    public void PutBomb()
+    public void OnPointerClick()
     {
         //duplicate bomb
         GameObject bomb_aux = Instantiate(bomb, bomb.transform.position, Quaternion.identity);
@@ -28,9 +29,6 @@ public class BombButton : MonoBehaviour
         //set bomb withuot parent
         bomb_aux.transform.SetParent(null);
         //set the scale
-        
-        //set the position
-        bomb_aux.transform.position = new Vector3(gazePosition.transform.position.x, gazePosition.transform.position.y, gazePosition.transform.position.z);
         //bomb.transform.localScale = scaleLabyrind;
         bomb_aux.SetActive(true);
         //call the coroutine

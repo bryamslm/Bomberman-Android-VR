@@ -715,6 +715,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &330382590 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3892196530090776506, guid: 64ab00f410c58be4f9f5c8e8857b1298,
+    type: 3}
+  m_PrefabInstance: {fileID: 362825995986091035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &330382592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330382587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2900ce30c827424b8e1482bb7f227f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator1: {fileID: 330382590}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +933,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &605475595 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4709978733500760921, guid: 5148fef8e1b9819458b67f9ef148f192,
+    type: 3}
+  m_PrefabInstance: {fileID: 7650421006317314205}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &605475597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605475592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2900ce30c827424b8e1482bb7f227f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator1: {fileID: 605475595}
 --- !u!1 &824161700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,7 +1376,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a29e736bc1ac344448bc2da77fb3bfaf, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1472,6 +1510,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1897679347 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3673674499561810955, guid: 1a9bf4a9756847f4ba9a4883b2aad493,
+    type: 3}
+  m_PrefabInstance: {fileID: 3673251272072275825}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1897679349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897679344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2900ce30c827424b8e1482bb7f227f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator1: {fileID: 1897679347}
 --- !u!1 &1908410101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,7 +1783,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b9265456b4d9bc04593468b0675411a8, type: 2}
+      objectReference: {fileID: 9100000, guid: 7f6356b9768904c43aa2eb3773389bb4, type: 2}
     - target: {fileID: 3892196530090776506, guid: 64ab00f410c58be4f9f5c8e8857b1298,
         type: 3}
       propertyPath: m_ApplyRootMotion
@@ -1735,7 +1792,7 @@ PrefabInstance:
     - target: {fileID: 8437059561619676366, guid: 64ab00f410c58be4f9f5c8e8857b1298,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8437059561619676366, guid: 64ab00f410c58be4f9f5c8e8857b1298,
         type: 3}
@@ -1819,7 +1876,7 @@ PrefabInstance:
     - target: {fileID: 8648062984450471140, guid: 1a9bf4a9756847f4ba9a4883b2aad493,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8648062984450471140, guid: 1a9bf4a9756847f4ba9a4883b2aad493,
         type: 3}
@@ -1939,7 +1996,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b9265456b4d9bc04593468b0675411a8, type: 2}
+      objectReference: {fileID: 9100000, guid: efe237ee22007d141b27d1bc695a1705, type: 2}
     - target: {fileID: 4709978733500760921, guid: 5148fef8e1b9819458b67f9ef148f192,
         type: 3}
       propertyPath: m_ApplyRootMotion

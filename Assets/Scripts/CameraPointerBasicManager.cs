@@ -40,6 +40,19 @@ public class CameraPointerBasicManager : MonoBehaviour
         {
             _gazedAtObject?.SendMessage("OnPointerClick", null, SendMessageOptions.DontRequireReceiver);
         }
+        if (_gazedAtObject.name == "akion")
+        {
+            _gazedAtObject?.SendMessage("loadAkionAnimation", null, SendMessageOptions.DontRequireReceiver);
+        }
+        if (_gazedAtObject.name == "bryam")
+        {
+            _gazedAtObject?.SendMessage("loadBryamAnimation", null, SendMessageOptions.DontRequireReceiver);
+        }
+        if (_gazedAtObject.name == "reyner")
+        {
+            _gazedAtObject?.SendMessage("loadReynerAnimation", null, SendMessageOptions.DontRequireReceiver);
+        }
+
 
             
     }

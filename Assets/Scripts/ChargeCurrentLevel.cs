@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Data;
 
 public class ChargeCurrentLevel : MonoBehaviour
 {
     private int currentLevel;
     private string currentLevelName = "CurrentLevel";
+    public TextAsset jsonFile;
 
     void Start()
     {
@@ -20,8 +22,8 @@ public class ChargeCurrentLevel : MonoBehaviour
 
     private void LoadData()
     {
-
-        
+        SavedData data = JsonUtility.FromJson<SavedData>(jsonFile.text);
+        currentLevel = data.currentLevel;
     }
 
     private void SaveData()

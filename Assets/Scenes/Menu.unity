@@ -711,12 +711,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 241738665}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &241738667 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2305158326994927421, guid: 2f0432d3a9594db438d41ca88128c4a1,
-    type: 3}
-  m_PrefabInstance: {fileID: 241738665}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &396995282
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7936667cf5add5c418822d8e3c2ae92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: 9212f433bf3ff4e47bd90c9733782a92, type: 3}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,11 +1600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c6a1b8b51aaa014d92658e07e09ac83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivote1: {fileID: 1523053552}
-  pivote2: {fileID: 1678527646}
-  gazePoint: {fileID: 241738667}
-  slider: {fileID: 34291132}
-  sound1: {fileID: 1740626938}
 --- !u!65 &1083922932
 BoxCollider:
   m_ObjectHideFlags: 0

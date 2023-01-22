@@ -8,7 +8,7 @@ using TMPro;
 public class LoadingScript : MonoBehaviour
 {
     public int currentLevel;
-    private string currentLevelName = "CurrentLevel";
+    private string currentLevelName;
     public TextMeshProUGUI levelText;
 
     // Update is called once per frame

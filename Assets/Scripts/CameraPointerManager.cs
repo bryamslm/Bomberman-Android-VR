@@ -12,6 +12,7 @@ public class CameraPointerManager : MonoBehaviour
     [SerializeField] public bool move;
     [Range(0, 1)]
     [SerializeField] private float disPointerObject = 0.95f;
+    [SerializeField] private BombButton bombButtonScript;
 
 
 
@@ -21,6 +22,8 @@ public class CameraPointerManager : MonoBehaviour
     private float timeWait = 0.1f;
 
     private readonly string interactableTag = "Interactable";
+    private readonly string paredTag = "pared";
+    private readonly string enemieTag = "Enemie";
     private float scaleSize = 0.025f;
 
 
@@ -34,6 +37,11 @@ public class CameraPointerManager : MonoBehaviour
     private void GazeSelection()
     {
         _gazedAtObject?.SendMessage("OnPointerClick", null, SendMessageOptions.DontRequireReceiver);
+
+        if(_gazedAtObject.transform.CompareTag(paredTag) || _gazedAtObject.transform.CompareTag(enemieTag))
+        {
+            bombButtonScript.PutBomb();
+        }
     }
 
     /// <summary>
@@ -60,6 +68,7 @@ public class CameraPointerManager : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward * maxDistancePointer, Color.red);
             if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistancePointer))
             {
+                
                 // GameObject detected in front of the camera.
                 if (_gazedAtObject != hit.transform.gameObject)
                 {
@@ -85,7 +94,7 @@ public class CameraPointerManager : MonoBehaviour
                     {
                     }
                 }
-                if (hit.transform.CompareTag(interactableTag))
+                if (hit.transform.CompareTag(interactableTag) || hit.transform.CompareTag(paredTag) || hit.transform.CompareTag(enemieTag))
                 {
                     PointerOnGaze(hit.point);
                 }
@@ -151,5 +160,3 @@ public class CameraPointerManager : MonoBehaviour
         return new Vector3(x, y, z);
     }
 }
-
-

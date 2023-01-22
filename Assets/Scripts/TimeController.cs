@@ -40,7 +40,7 @@ public class TimeController : MonoBehaviour
             if (secs <= 0)
             {
                 mins -= 1;
-                if(mins != 0)
+                if(mins >= 0)
                     secs = 60;
             }
 
@@ -51,12 +51,14 @@ public class TimeController : MonoBehaviour
                 else
                     textMesh.text = "Time: " + mins + ":0" + secsInt;
             }
-                
+            
+            int secsAux = (int)secs;
 
-            if (mins <= 0f && secsInt <= 0)
+            if (mins <= 0f && secsAux <= 0)
             {
                 //game over
                 Debug.Log("game over");
+                 textMesh.text = "Time: " + "0:00";
                 gameOverAudio.Play();
                 gameAudio.Stop();
                 

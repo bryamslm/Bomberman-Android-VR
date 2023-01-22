@@ -51,8 +51,6 @@ public class CameraPointerManager : MonoBehaviour
 
     public void Update()
     {
-         bool continueFlow = true;
-        Debug.Log("update");
 
         try
         {
@@ -70,15 +68,8 @@ public class CameraPointerManager : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward * maxDistancePointer, Color.red);
             if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistancePointer))
             {
-                if(hit.transform.CompareTag("explosion"))
-                {
-                    Debug.Log("explosion");
-                    //hit.transform.gameObject.SetActive(false);
-                    //do nothing
-                    continueFlow = false;
-
-                }
-                if(continueFlow){
+               
+              
                     
                     if (_gazedAtObject != hit.transform.gameObject)
                     {
@@ -88,8 +79,7 @@ public class CameraPointerManager : MonoBehaviour
                           
                                 
                             
-                            if(_gazedAtObject == null)
-                            {
+                        
                                 _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
                                 _gazedAtObject = hit.transform.gameObject;
                                 // try{
@@ -105,7 +95,7 @@ public class CameraPointerManager : MonoBehaviour
                                 
                                 _gazedAtObject?.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
                                 GazeManager.Instance.StartGazeSelection();
-                            }
+                            
                             
                         }
                             catch
@@ -121,7 +111,7 @@ public class CameraPointerManager : MonoBehaviour
                     {
                         PointerOutGaze();
                     }
-                }
+                
 
             }
             else
@@ -163,7 +153,7 @@ public class CameraPointerManager : MonoBehaviour
         pointer.transform.parent.position = CalculatePointerPosition(transform.position, hitPoint,disPointerObject);
     }
 
-    private void PointerOutGaze()
+    public void PointerOutGaze()
     {
         pointer.transform.localScale = Vector3.one*0.1f;
         pointer.transform.parent.transform.localPosition = new Vector3(0, 0, maxDistancePointer);

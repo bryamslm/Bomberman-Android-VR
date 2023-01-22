@@ -342,7 +342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &21777264
 Transform:
   m_ObjectHideFlags: 0
@@ -2828,6 +2828,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdcc9dc739428154c95a6141f1213fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptLoad: {fileID: 8523337799159019098}
+  inGameButtons: {fileID: 908725669}
+  gameOverButtons: {fileID: 896053159}
+  movementScript: {fileID: 967713188}
+  bombButtonScript: {fileID: 967713190}
+  gameAudio: {fileID: 967713186}
+  gameOverAudio: {fileID: 1061324014}
 --- !u!1 &371999665
 GameObject:
   m_ObjectHideFlags: 0
@@ -2842,7 +2849,7 @@ GameObject:
   - component: {fileID: 371999667}
   - component: {fileID: 371999666}
   - component: {fileID: 371999671}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rangoMejora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6523,6 +6530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLevel: 0
   jsonFile: {fileID: 4900000, guid: f1c2c421464a4b34b85b6a73d7875148, type: 3}
+  scriptLoad: {fileID: 8523337799159019098}
 --- !u!1 &793172471
 GameObject:
   m_ObjectHideFlags: 0
@@ -6731,7 +6739,7 @@ GameObject:
   - component: {fileID: 797926150}
   - component: {fileID: 797926149}
   - component: {fileID: 797926148}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: velocidadMejora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8703,7 +8711,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 536f682bbb19a6547a1438e8990281fc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5d6c6fde73abd4f4196414d20ca415c4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -10677,6 +10685,7 @@ MonoBehaviour:
   bombButtonScript: {fileID: 967713190}
   gameAudio: {fileID: 967713186}
   gameOverAudio: {fileID: 1061324014}
+  gazeScript: {fileID: 8523337799044277730}
 --- !u!4 &1344273484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 15ca5b8fa431dc04291a79cadcd19874,
@@ -10694,7 +10703,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.6, z: 0.55}
+  m_Size: {x: 0.5, y: 0.6, z: 0.5}
   m_Center: {x: -0.040749762, y: -0.018972665, z: -0.029101804}
 --- !u!1 &1383361829
 GameObject:
@@ -35848,6 +35857,7 @@ GameObject:
   - component: {fileID: 967713183}
   - component: {fileID: 967713188}
   - component: {fileID: 967713190}
+  - component: {fileID: 8523337799159019098}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -35890,3 +35900,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8523337799159019098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523337799159019094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2e62d61fcbe4246beb1cea8e553ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderExplosion: {fileID: 1344273485}
+  movementSpeed: {fileID: 967713188}
+  apllySpeed: 0
+  applyRange: 0

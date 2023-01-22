@@ -30,7 +30,7 @@ public class BombButton : MonoBehaviour
         //set the scale
         
         //set the position
-        bomb_aux.transform.position = new Vector3(gazePosition.transform.position.x, gazePosition.transform.position.y, gazePosition.transform.position.z);
+        bomb_aux.transform.position = new Vector3(gazePosition.transform.position.x, 0.85f, gazePosition.transform.position.z);
         //bomb.transform.localScale = scaleLabyrind;
         bomb_aux.SetActive(true);
         //call the coroutine

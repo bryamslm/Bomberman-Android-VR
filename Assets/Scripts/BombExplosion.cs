@@ -10,6 +10,9 @@ public class BombExplosion : MonoBehaviour
     [SerializeField] public BombButton bombButtonScript;
     [SerializeField] public AudioSource gameAudio;
     [SerializeField] public AudioSource gameOverAudio;
+
+    public CameraPointerManager gazeScript;
+
     //on trigger enter
     void OnTriggerEnter(Collider other)
     {
@@ -34,8 +37,12 @@ public class BombExplosion : MonoBehaviour
         if (other.gameObject.CompareTag("pared"))
         {
             Debug.Log("pared Destroyed");
+            gazeScript.enabled = false;
+
             //destroy player
             Destroy(other.gameObject);
+
+            gazeScript.enabled = true;
         }
     }
 }

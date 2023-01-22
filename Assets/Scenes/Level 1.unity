@@ -7305,7 +7305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &831297720
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7315,7 +7315,7 @@ RectTransform:
   m_GameObject: {fileID: 831297719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4910276, y: 1.4910276, z: 1.4910276}
+  m_LocalScale: {x: 4.0716267, y: 4.0716267, z: 4.0716267}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1198167800}
@@ -7326,7 +7326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -270.1704, y: 122}
+  m_AnchoredPosition: {x: -270.1704, y: 276}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &832575517
@@ -14429,7 +14429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bomb!
+  m_text: Map
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 67dcb09fa71bb3d4d9d5dca0bc4acdf8, type: 2}
   m_sharedMaterial: {fileID: 1254814913548296320, guid: 67dcb09fa71bb3d4d9d5dca0bc4acdf8,
@@ -14557,13 +14557,14 @@ GameObject:
   - component: {fileID: 1823340363}
   - component: {fileID: 1823340362}
   - component: {fileID: 1823340361}
+  - component: {fileID: 1823340364}
   m_Layer: 0
   m_Name: BombButton
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1823340360
 Transform:
   m_ObjectHideFlags: 0
@@ -14643,6 +14644,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823340359}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1823340364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823340359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88dc9683b7e2241418d3c1d2aeb3f158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapa: {fileID: 831297719}
 --- !u!1 &1839175261
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ TagManager:
   - userPostal
   - pared
   - Portal
+  - VelocityUp
   layers:
   - Default
   - TransparentFX

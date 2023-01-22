@@ -16,7 +16,6 @@ public class CameraPointerManager : MonoBehaviour
 
 
 
-
     private const float _maxDistance = 10;
     private GameObject _gazedAtObject = null;
     private float timeWait = 0.1f;
@@ -40,6 +39,7 @@ public class CameraPointerManager : MonoBehaviour
 
         if(_gazedAtObject.transform.CompareTag(paredTag) || _gazedAtObject.transform.CompareTag(enemieTag))
         {
+            
             bombButtonScript.PutBomb();
         }
     }
@@ -51,6 +51,8 @@ public class CameraPointerManager : MonoBehaviour
 
     public void Update()
     {
+         bool continueFlow = true;
+        Debug.Log("update");
 
         try
         {
@@ -68,39 +70,57 @@ public class CameraPointerManager : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward * maxDistancePointer, Color.red);
             if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistancePointer))
             {
-                
-                // GameObject detected in front of the camera.
-                if (_gazedAtObject != hit.transform.gameObject)
+                if(hit.transform.CompareTag("explosion"))
                 {
-                    // New GameObject.
-                try{
-                    _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
-                    _gazedAtObject = hit.transform.gameObject;
-                    // try{
-                    //     //get sound from object
-                    //     AudioSource audio = _gazedAtObject.GetComponent<AudioSource>();
-                    //     //play sound
-                    //     audio.Play();
-                        
+                    Debug.Log("explosion");
+                    //hit.transform.gameObject.SetActive(false);
+                    //do nothing
+                    continueFlow = false;
 
-                    // }catch{
-                    //     Debug.Log("No sound");
-                    // }
+                }
+                if(continueFlow){
                     
-                    _gazedAtObject?.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
-                    GazeManager.Instance.StartGazeSelection();
-                }
-                    catch
+                    if (_gazedAtObject != hit.transform.gameObject)
                     {
+                        
+                        // New GameObject.
+                        try{
+                          
+                                
+                            
+                            if(_gazedAtObject == null)
+                            {
+                                _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
+                                _gazedAtObject = hit.transform.gameObject;
+                                // try{
+                                //     //get sound from object
+                                //     AudioSource audio = _gazedAtObject.GetComponent<AudioSource>();
+                                //     //play sound
+                                //     audio.Play();
+                                    
+
+                                // }catch{
+                                //     Debug.Log("No sound");
+                                // }
+                                
+                                _gazedAtObject?.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
+                                GazeManager.Instance.StartGazeSelection();
+                            }
+                            
+                        }
+                            catch
+                        {
+
+                        }
                     }
-                }
-                if (hit.transform.CompareTag(interactableTag) || hit.transform.CompareTag(paredTag) || hit.transform.CompareTag(enemieTag))
-                {
-                    PointerOnGaze(hit.point);
-                }
-                else
-                {
-                    PointerOutGaze();
+                    if (hit.transform.CompareTag(interactableTag) || hit.transform.CompareTag(paredTag) || hit.transform.CompareTag(enemieTag))
+                    {
+                        PointerOnGaze(hit.point);
+                    }
+                    else
+                    {
+                        PointerOutGaze();
+                    }
                 }
 
             }

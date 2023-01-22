@@ -58,7 +58,7 @@ public class BombButton : MonoBehaviour
         //get audio from explosion
         explosion.GetComponent<AudioSource>().Play();
         //set containerButtons as parent
-        Destroy(bomb_aux);
+        bomb_aux.SetActive(false);
         yield return new WaitForSeconds(1f);
         explosion.SetActive(false);
 

@@ -10,6 +10,7 @@ TagManager:
   - pared
   - Portal
   - VelocityUp
+  - explosion
   layers:
   - Default
   - TransparentFX

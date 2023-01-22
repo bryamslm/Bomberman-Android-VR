@@ -13,6 +13,7 @@ public class TimeController : MonoBehaviour
     [SerializeField] public GameObject inGameButtons;
     [SerializeField] public GameObject gameOverButtons;
     [SerializeField] public Movement movementScript;
+    [SerializeField] public BombButton bombButtonScript;
     [SerializeField] public TextMeshProUGUI textMesh;
     [SerializeField] public AudioSource gameAudio;
     [SerializeField] public AudioSource gameOverAudio;
@@ -63,6 +64,7 @@ public class TimeController : MonoBehaviour
                 inGameButtons.SetActive(false);
                 gameOverButtons.SetActive(true);
                 movementScript.enabled = false;
+                bombButtonScript.enabled = false;
             }
        }
 

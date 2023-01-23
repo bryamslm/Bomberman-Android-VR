@@ -40,7 +40,7 @@ public class ChracterManager : MonoBehaviour
         UpdateCharacter(selectedOption);
     }
     public void loadGame(){
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Menu");
     }
 
 

@@ -65,6 +65,10 @@ public class CameraPointerBasicManager : MonoBehaviour
         {
             _gazedAtObject?.SendMessage("loadGame", null, SendMessageOptions.DontRequireReceiver);
         }
+        if (_gazedAtObject.name == "PlayAgain")
+        {
+            _gazedAtObject?.SendMessage("restartGame", null, SendMessageOptions.DontRequireReceiver);
+        }
 
 
             

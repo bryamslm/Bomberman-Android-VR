@@ -2587,8 +2587,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 0.98905975}
+  m_Center: {x: 0, y: 0, z: 0.005469855}
 --- !u!23 &358088220
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2855,7 +2855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &371999666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8016,7 +8016,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8523337799159019094}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ece1bcb4957e09640befd5256c62341a, type: 3}
@@ -11796,7 +11796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 15ca5b8fa431dc04291a79cadcd19874, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 15ca5b8fa431dc04291a79cadcd19874, type: 3}
       propertyPath: m_IsActive
@@ -11808,15 +11808,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 15ca5b8fa431dc04291a79cadcd19874, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 15ca5b8fa431dc04291a79cadcd19874, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 15ca5b8fa431dc04291a79cadcd19874, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 15ca5b8fa431dc04291a79cadcd19874, type: 3}
       propertyPath: m_RootOrder
@@ -15275,7 +15275,7 @@ GameObject:
   - component: {fileID: 1982586237}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 126
@@ -35742,9 +35742,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.03
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.3
+  far clip plane: 500
+  field of view: 62
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -35777,7 +35777,6 @@ MonoBehaviour:
   pointer: {fileID: 8523337798832910132}
   maxDistancePointer: 6
   bombButton: {fileID: 105603471}
-  move: 0
   disPointerObject: 1
   bombButtonScript: {fileID: 967713190}
 --- !u!114 &8523337799044277731

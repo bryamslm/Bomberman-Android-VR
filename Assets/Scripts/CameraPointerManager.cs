@@ -9,7 +9,6 @@ public class CameraPointerManager : MonoBehaviour
     [SerializeField] public GameObject pointer;
     [SerializeField] private float maxDistancePointer;
     [SerializeField] private GameObject bombButton;
-    [SerializeField] public bool move;
     [Range(0, 1)]
     [SerializeField] private float disPointerObject = 0.95f;
     [SerializeField] private BombButton bombButtonScript;
@@ -52,13 +51,9 @@ public class CameraPointerManager : MonoBehaviour
     public void Update()
     {
 
-        try
-        {
+        
             //roto el player, se tiene en cuenta que también se rota la camara, para eso el auxRotation
             bombButton.transform.eulerAngles =new Vector3(0, transform.rotation.eulerAngles.y, bombButton.transform.rotation.z);
-            
-        
-
 
                 
             // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
@@ -68,40 +63,26 @@ public class CameraPointerManager : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward * maxDistancePointer, Color.red);
             if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistancePointer))
             {
-               
-              
                     
                     if (_gazedAtObject != hit.transform.gameObject)
                     {
                         
-                        // New GameObject.
-                        try{
-                          
-                                
-                            
                         
-                                _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
+                        // New GameObject.
+                                        
+                               if(_gazedAtObject != null)
+                                {
+                                     _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
+                                }
+                                //_gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
                                 _gazedAtObject = hit.transform.gameObject;
-                                // try{
-                                //     //get sound from object
-                                //     AudioSource audio = _gazedAtObject.GetComponent<AudioSource>();
-                                //     //play sound
-                                //     audio.Play();
-                                    
-
-                                // }catch{
-                                //     Debug.Log("No sound");
-                                // }
                                 
                                 _gazedAtObject?.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
                                 GazeManager.Instance.StartGazeSelection();
+                                Debug.Log("On Gaze Enter");
                             
                             
-                        }
-                            catch
-                        {
-
-                        }
+                        
                     }
                     if (hit.transform.CompareTag(interactableTag) || hit.transform.CompareTag(paredTag) || hit.transform.CompareTag(enemieTag))
                     {
@@ -118,32 +99,20 @@ public class CameraPointerManager : MonoBehaviour
             {
                 // No GameObject detected in front of the camera.
                 
-                try{
+             
                     _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
                     _gazedAtObject = null;
-                }
-                catch
-                {
-
-                }
+               
             }
 
             // Checks for screen touches.
             if (Google.XR.Cardboard.Api.IsTriggerPressed)
             {
-                try{
+                
                     _gazedAtObject?.SendMessage("OnPointerClick", null, SendMessageOptions.DontRequireReceiver);
-                }
-                catch
-                {
-                    
-                }
+                
             }
-        }
-        catch
-        {
-            
-        }
+       
     }
 
     private void PointerOnGaze(Vector3 hitPoint)

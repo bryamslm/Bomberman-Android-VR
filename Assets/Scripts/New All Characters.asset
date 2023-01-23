@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6cb431d852f2948b3aa356bf7c45d8, type: 3}
+  m_Name: New All Characters
+  m_EditorClassIdentifier: 
+  characters:
+  - characterName: White Bomberman
+    characterImage: {fileID: 21300000, guid: 71d905258a72ee8498abec46749cdc34, type: 3}
+  - characterName: Black Bomberman
+    characterImage: {fileID: 21300000, guid: 9304630726e75ae48a983aa50c16c3fe, type: 3}
+  - characterName: Bliue Bomberman
+    characterImage: {fileID: 21300000, guid: a34e2139e067a9d449f29a9d61777ded, type: 3}
+  - characterName: Red Bomberman
+    characterImage: {fileID: 21300000, guid: dde37680d66d5d047994563e20015117, type: 3}

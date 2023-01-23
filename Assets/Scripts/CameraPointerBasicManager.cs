@@ -53,6 +53,19 @@ public class CameraPointerBasicManager : MonoBehaviour
             _gazedAtObject?.SendMessage("loadReynerAnimation", null, SendMessageOptions.DontRequireReceiver);
         }
 
+        if (_gazedAtObject.name == "Next")
+        {
+            _gazedAtObject?.SendMessage("NextOption", null, SendMessageOptions.DontRequireReceiver);
+        }
+        if (_gazedAtObject.name == "Back")
+        {
+            _gazedAtObject?.SendMessage("PreviousOption", null, SendMessageOptions.DontRequireReceiver);
+        }
+        if (_gazedAtObject.name == "Select")
+        {
+            _gazedAtObject?.SendMessage("loadGame", null, SendMessageOptions.DontRequireReceiver);
+        }
+
 
             
     }

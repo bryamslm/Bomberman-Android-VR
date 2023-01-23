@@ -33,7 +33,7 @@ public class LoadScene : MonoBehaviour
     {
         gameInfo.level += 1;
         if(applyRange){
-            gameInfo.rangeExplosion += 0.2f;
+            gameInfo.rangeExplosion += 0.25f;
         }
         if(apllySpeed){
             gameInfo.speed += 0.2f;

@@ -26,6 +26,7 @@ public class OptionManager : MonoBehaviour
     }
     public void restartGame()
     {
+
         var dataFound =  LoadSystem.loadData<GameInfo>();
 
         if (dataFound != null)
@@ -43,8 +44,8 @@ public class OptionManager : MonoBehaviour
             gameInfo = new GameInfo(1, 1.7f, 0.55f);
             LoadSystem.saveData<GameInfo>(gameInfo);
         }
+        SceneManager.LoadScene(2);
 
-        SceneManager.LoadScene("Loading Screen");
     }
 
 }

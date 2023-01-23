@@ -20,7 +20,7 @@ public class LoadScene : MonoBehaviour
             gameInfo = dataFound;
             movementSpeed.speed = gameInfo.speed;
             colliderExplosion.size = new Vector3(gameInfo.rangeExplosion, colliderExplosion.size.y, gameInfo.rangeExplosion);
-            Debug.Log("Level a: " + gameInfo.level);
+       
         }
         else
         {
@@ -39,7 +39,7 @@ public class LoadScene : MonoBehaviour
             gameInfo.speed += 0.2f;
         }
         LoadSystem.saveData<GameInfo>(gameInfo);
-        Debug.Log("Level b: " + gameInfo.level);
+ 
     
     }
 

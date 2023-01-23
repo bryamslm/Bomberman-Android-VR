@@ -34,12 +34,26 @@ public class LoadingScript : MonoBehaviour
         }
 
         currentLevel = gameInfo.level;
-        levelText.text = "Level " + gameInfo.level;
+
+        if(currentLevel == 8){
+             levelText.text = "You Win!";
+        }
+        else
+        {
+            levelText.text = "Level " + gameInfo.level;
+        }
+        
         StartCoroutine(LoadLevel());
     }
 
     IEnumerator LoadLevel(){
         yield return new WaitForSeconds(6f);
-        SceneManager.LoadScene(currentLevel+2);
+        if(currentLevel == 8){
+            SceneManager.LoadScene("Win");
+        }
+        else
+        {
+            SceneManager.LoadScene(currentLevel+2);
+        }
     }
 }

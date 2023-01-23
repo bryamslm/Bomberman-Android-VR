@@ -79,7 +79,7 @@ public class CameraPointerManager : MonoBehaviour
                                 
                                 _gazedAtObject?.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
                                 GazeManager.Instance.StartGazeSelection();
-                                Debug.Log("On Gaze Enter");
+             
                             
                             
                         

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraPointerBasicManager : MonoBehaviour
 {
@@ -68,6 +69,18 @@ public class CameraPointerBasicManager : MonoBehaviour
         if (_gazedAtObject.name == "PlayAgain")
         {
             _gazedAtObject?.SendMessage("restartGame", null, SendMessageOptions.DontRequireReceiver);
+        }
+        if (_gazedAtObject.name == "Exit")
+        {
+            Application.Quit();
+        }
+        if(_gazedAtObject.name == "selectCharacter")
+        {
+            SceneManager.LoadScene("Select Chracter");
+        }
+        if (_gazedAtObject.name == "goMenu")
+        {
+            SceneManager.LoadScene("Menu");
         }
 
 

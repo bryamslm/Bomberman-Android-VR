@@ -1024,6 +1024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 462412117}
   - component: {fileID: 462412116}
+  - component: {fileID: 462412118}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1063,6 +1064,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &462412118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462412115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3adaf5f3a47eb14a902d5c7de2e5b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 34291132}
 --- !u!1 &475241395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,6 +1821,7 @@ MonoBehaviour:
   gazePoint: {fileID: 241738667}
   slider: {fileID: 34291132}
   sound1: {fileID: 1740626938}
+  volumeSerialize: {fileID: 462412118}
 --- !u!65 &1083922932
 BoxCollider:
   m_ObjectHideFlags: 0

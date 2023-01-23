@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadScene : MonoBehaviour
 {
     GameInfo gameInfo;
     public BoxCollider colliderExplosion;
     public Movement movementSpeed;
+    public Slider volumeSlider;
 
     public bool apllySpeed = false;
     public bool applyRange = false;
@@ -27,11 +29,18 @@ public class LoadScene : MonoBehaviour
             gameInfo = new GameInfo(1, 1.7f, 0.55f);
             LoadSystem.saveData<GameInfo>(gameInfo);
         }
+
+        volumeSlider.value = gameInfo.volume;
+        //get audio source
+        
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.volume = volumeSlider.value;
     }
 
     public void nextLevel()
     {
         gameInfo.level += 1;
+        gameInfo.volume = volumeSlider.value;
         if(applyRange){
             gameInfo.rangeExplosion += 0.25f;
         }

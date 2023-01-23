@@ -5,11 +5,30 @@ using UnityEngine.UI;
 
 public class Volume : MonoBehaviour
 {
+    GameInfo gameInfo;
     [SerializeField] public GameObject pivote1;
     [SerializeField] public GameObject pivote2;
     [SerializeField] public GameObject gazePoint;
     [SerializeField] public Slider slider;
     [SerializeField] public AudioSource sound1;
+
+    void Start()
+    {
+        var dataFound =  LoadSystem.loadData<GameInfo>();
+
+        if (dataFound != null)
+        {
+            gameInfo = dataFound;
+       
+        }
+        else
+        {
+            gameInfo = new GameInfo(1, 1.7f, 0.55f);
+            LoadSystem.saveData<GameInfo>(gameInfo);
+        }
+        slider.value = gameInfo.volume;
+        sound1.volume = slider.value;
+    }
 
     void OnPointerClick()
     {
@@ -33,6 +52,8 @@ public class Volume : MonoBehaviour
         
         slider.value = volume;
         sound1.volume = volume;
+        gameInfo.volume = slider.value;
+        LoadSystem.saveData<GameInfo>(gameInfo);
 
     }
 }

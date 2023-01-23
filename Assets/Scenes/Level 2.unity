@@ -10277,9 +10277,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1145391037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c6a1b8b51aaa014d92658e07e09ac83, type: 3}
+  m_Script: {fileID: 11500000, guid: d1d116f3b4ffe6e41b67722873075da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pivote1: {fileID: 718366635}
+  pivote2: {fileID: 110107573}
+  gazePoint: {fileID: 1902711901}
+  slider: {fileID: 808360640}
+  sound1: {fileID: 967713186}
 --- !u!65 &1145391040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13673,10 +13678,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0731e19243e0394fb7ef95b7a41c066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inGameMenu: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  movement: {fileID: 0}
-  timeController: {fileID: 0}
+  inGameMenu: {fileID: 908725669}
+  pauseMenu: {fileID: 808965858}
+  movement: {fileID: 967713188}
+  timeController: {fileID: 1061324011}
 --- !u!1 &1477788740
 GameObject:
   m_ObjectHideFlags: 0

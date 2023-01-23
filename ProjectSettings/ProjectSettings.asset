@@ -780,6 +780,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
   scriptingDefineSymbols:
+    Android: READY_PLAYER_ME
     Standalone: READY_PLAYER_ME
   additionalCompilerArguments: {}
   platformArchitecture: {}

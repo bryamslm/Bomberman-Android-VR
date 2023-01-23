@@ -13,7 +13,6 @@ public class WinCondition : MonoBehaviour
     {
         Transform[] enemies = enemiesObject.transform.GetComponentsInChildren<Transform>();
         enemiesQuantity = enemies.Length;
-        Debug.Log("Enemies: " + enemiesQuantity);
         if(enemiesQuantity == 1){
             portal.SetActive(true);
         }

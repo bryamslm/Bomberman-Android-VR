@@ -19,6 +19,7 @@ EditorBuildSettings:
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
+<<<<<<< HEAD
     guid: c698867dd1b7800479cf01ebd431d9d5
   - enabled: 1
     path: Assets/Scenes/Level 3.unity
@@ -41,6 +42,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Select Chracter.unity
     guid: ef1dd34939de8704593a04dc294e870d
+=======
+    guid: ee6e211f77f28b046b4639e54ff3da52
+>>>>>>> 56b9245 (ScreenShots for Readme)
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 403146edeaf737640b2f23aa184eb543,
       type: 2}

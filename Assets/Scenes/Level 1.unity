@@ -341,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &21777264
 Transform:
   m_ObjectHideFlags: 0
@@ -36767,6 +36767,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderExplosion: {fileID: 1344273485}
   movementSpeed: {fileID: 967713188}
+<<<<<<< HEAD
   volumeSlider: {fileID: 808360640}
+=======
+>>>>>>> 56b9245 (ScreenShots for Readme)
   apllySpeed: 0
   applyRange: 0

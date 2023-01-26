@@ -34,6 +34,7 @@ public class LoadingScript : MonoBehaviour
         }
 
         currentLevel = gameInfo.level;
+<<<<<<< HEAD
 
         if(currentLevel == 8){
              levelText.text = "You Win!";
@@ -43,6 +44,9 @@ public class LoadingScript : MonoBehaviour
             levelText.text = "Level " + gameInfo.level;
         }
         
+=======
+        levelText.text = "Level " + gameInfo.level;
+>>>>>>> 56b9245 (ScreenShots for Readme)
         StartCoroutine(LoadLevel());
     }
 

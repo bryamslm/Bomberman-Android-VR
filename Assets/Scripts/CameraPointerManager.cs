@@ -63,23 +63,41 @@ public class CameraPointerManager : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward * maxDistancePointer, Color.red);
             if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistancePointer))
             {
+<<<<<<< HEAD
+=======
+               
+              
+>>>>>>> 56b9245 (ScreenShots for Readme)
                     
                     if (_gazedAtObject != hit.transform.gameObject)
                     {
                         
                         
                         // New GameObject.
+<<<<<<< HEAD
                                         
                                if(_gazedAtObject != null)
                                 {
                                      _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
                                 }
                                 //_gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
+=======
+                        try{
+                          
+                                
+                            
+                        
+                                _gazedAtObject?.SendMessage("OnPointerExit", null, SendMessageOptions.DontRequireReceiver);
+>>>>>>> 56b9245 (ScreenShots for Readme)
                                 _gazedAtObject = hit.transform.gameObject;
                                 
                                 _gazedAtObject?.SendMessage("OnPointerEnter", null, SendMessageOptions.DontRequireReceiver);
                                 GazeManager.Instance.StartGazeSelection();
+<<<<<<< HEAD
              
+=======
+                            
+>>>>>>> 56b9245 (ScreenShots for Readme)
                             
                             
                         

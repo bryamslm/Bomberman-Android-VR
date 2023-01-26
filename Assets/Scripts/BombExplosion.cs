@@ -36,7 +36,11 @@ public class BombExplosion : MonoBehaviour
         }
         if (other.gameObject.CompareTag("pared"))
         {
+<<<<<<< HEAD
     
+=======
+            Debug.Log("pared Destroyed");
+>>>>>>> 56b9245 (ScreenShots for Readme)
             gazeScript.enabled = false;
 
             //destroy player
